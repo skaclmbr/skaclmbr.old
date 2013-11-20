@@ -1,0 +1,24 @@
+
+body{
+    font-size:0.9em;
+    font-family:'Alef', ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, sans-serif;
+}
+
+h1{
+    font-family:'Roboto Condensed', Calibri, ‘Gill Sans’, ‘Gill Sans MT’, Tahoma, Geneva, Helvetica, Arial, sans-serif;
+    padding:0.1em;
+    margin: 0em;
+    font-size:2em;
+    font-weight:200;
+}
+
+p{
+    
+}
+
+#header{
+    color:#55dd55;
+    background:#444444;
+    padding:0.1em 0.5em 0.3em 0.3em;
+    text-align:right;
+}
