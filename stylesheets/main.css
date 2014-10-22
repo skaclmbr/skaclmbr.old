@@ -1,24 +1,32 @@
 
 body{
     font-size:0.9em;
-    font-family:'Alef', ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, sans-serif;
+    /*font-family:'Alef', ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, sans-serif;*/
+    font-family:"Source Sans Pro",Verdana, sans-serif;
+	background:#222222;
+	color: #cceecc;
 }
 
 h1{
-    font-family:'Roboto Condensed', Calibri, ‘Gill Sans’, ‘Gill Sans MT’, Tahoma, Geneva, Helvetica, Arial, sans-serif;
+    /*font-family:'Roboto Condensed', Calibri, ‘Gill Sans’, ‘Gill Sans MT’, Tahoma, Geneva, Helvetica, Arial, sans-serif;*/
+    font-family: 'Alegreya SC', sans-serif;
     padding:0.1em;
     margin: 0em;
-    font-size:2em;
-    font-weight:200;
+    font-size:2.5em;
+    font-weight:700;
+}
+
+h2{
+	font-size: 1.4em;
 }
 
 p{
-    
+	font-size:1.2em;
 }
 
 #header{
-    color:#55dd55;
+    color:#55aa55;
     background:#444444;
     padding:0.1em 0.5em 0.3em 0.3em;
-    text-align:right;
+    text-align:center;
 }
