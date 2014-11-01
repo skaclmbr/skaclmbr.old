@@ -5,8 +5,8 @@
 	<title>how much will my coffee cost in retirement?</title>
 	<!-- Load charts js -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="stylesheets/styles.css">
-	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	<!-- <link rel="stylesheet" href="stylesheets/styles.css"> -->
+	<!-- <link rel="stylesheet" href="stylesheets/pygment_trac.css"> -->
 	<link rel="stylesheet" href="stylesheets/coffee.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="javascripts/respond.js"></script>
@@ -68,6 +68,12 @@
 			//Number - amount extra to add to the radius to cater for hit detection outside the drawn point
 			pointHitDetectionRadius : 20,
 
+			// Boolean - Whether to show labels on the scale
+			scaleShowLabels: true,
+
+			// Interpolated JS string - can access value
+			scaleLabel: "<%=value%>",
+
 			//Boolean - Whether to show a stroke for datasets
 			datasetStroke : true,
 
@@ -95,10 +101,9 @@
 		};
 		
 		$(document).ready(function(){
-		
-			
 			//add elements to vice list
 			<!-- var vlist = $("viceList"); -->
+			$("<option value=''></option>").appendTo("#viceList");
 			for (i in vices) {
 				$("<option value='"+ i + "'>" + vices[i]["verb"] + " " + i + "</option>").appendTo("#viceList");
 			};
@@ -107,7 +112,9 @@
 			setupChart();
 			
 			$("#viceList").change(function(){
+				<!-- console.log("triggered " + $("#viceList").val()); -->
 				resetCanvas();
+				$("#graphic").show();
 				var myLineChart = setupChart();
 				currVice = this.value;
 				if (currVice) {
@@ -115,12 +122,9 @@
 					myLineChart.Bar(retrieveData(currVice,30), chartOptions);
 					};
 				});
-				$("#graphic").show();
+			$("#graphic").hide()
 			});
-			$("#viceList").val("coffee");
-			console.log($("#viceList").value);
-			$("#viceList").trigger("change");
-		
+			
 		function calculateCost(cost,amounts,yearstoRetire) {
 			//return array of data
 			//cost = cost of item
@@ -167,9 +171,10 @@
 <body>
 <div id="page">
 <form action="#"><fieldset>
-<h2>How Much Will <select name="vices" id="viceList"></select> Affect My Retirement in 30 years?</h2>
+<div id="title"><h2>How Much Will <select name="vices" id="viceList"></select><br/>Affect My Retirement<br/>in 30 years?</h2>
 </fieldset></form>
-<div id="graphic" style="display:none;">
+</div>
+<div id="graphic">
 <div id="yaxislabel">cost at<br/>retirement</div>
 <div id="chartdiv"></div>
 <div id="xaxislabel"></div>
