@@ -4,6 +4,34 @@ h2 {
 	font-family: 'Lato', sans-serif;
 }
 
+#page {
+	width:1000px;
+}
+
+#graphic {
+	width:90%;
+	height:500px;
+	display:none;
+}
+
+#chartdiv {
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+#yaxislabel {
+	text-align:left;
+}
+
+#xaxislabel {
+	text-align:center;
+	height: 3em;
+	width: 100%;
+	
+}
+
 #retireChart {
 	margin: 1em;
+	
 }
